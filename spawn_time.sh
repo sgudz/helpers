@@ -18,9 +18,9 @@ for namespace in $NAMESPACES; do
       
     total_h=$((ready_h - init_h))
     total_m=$((ready_m - init_m))
-    if [[ "$total_m" < 0 && "$total_h" == 1 ]];then
+    if [[ "$total_m" < 0 ]];then
         total_m=$((minutes - init_m + total_m))
-	total_h=0
+	total_h=$((total_h - 1))
     fi
     total_s=$((ready_s - init_s))
     if [[ "$total_s" < 0 ]]; then
